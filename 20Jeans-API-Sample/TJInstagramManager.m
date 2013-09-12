@@ -8,10 +8,11 @@
 
 #import "TJInstagramManager.h"
 #import <Instagram.h>
+#import "TJLoginViewController.h"
 
 #define kInstagramClientId @"99f687781a2a4cee96c967ac28a8d576"
 
-@interface TJInstagramManager () <IGSessionDelegate>
+@interface TJInstagramManager () <IGSessionDelegate, IGRequestDelegate>
 @property (strong, nonatomic) Instagram *instagram;
 @end
 
@@ -29,6 +30,13 @@
     });
     
     return _shared;
+}
+
+#pragma mark Fetcher methods
+
+- (void)fetchListWithParams:(NSMutableDictionary *)params
+{
+    [self.instagram requestWithParams:params delegate:self];
 }
 
 #pragma mark Auth logic
@@ -80,12 +88,26 @@
 
 - (void)igDidLogout
 {
-    
+    // TODO: popToRoot - present login view controller
 }
 
 - (void)igSessionInvalidated
 {
+    // TODO: popToRoot - present login view controller
+}
+
+#pragma mark IGRequest delegate methods
+
+- (void)request:(IGRequest *)request didLoad:(id)result
+{
+    if (self.resultBlock) self.resultBlock(result, nil);
+}
+
+- (void)request:(IGRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"Instagram API error: %@", error);
     
+    if (self.resultBlock) self.resultBlock(nil, error);
 }
 
 @end
