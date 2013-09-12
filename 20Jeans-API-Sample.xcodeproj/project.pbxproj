@@ -17,6 +17,9 @@
 		AD6E9B5D17E139C800F7476D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B5C17E139C800F7476D /* Default.png */; };
 		AD6E9B5F17E139C800F7476D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B5E17E139C800F7476D /* Default@2x.png */; };
 		AD6E9B6117E139C800F7476D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B6017E139C800F7476D /* Default-568h@2x.png */; };
+		AD6E9B6F17E1411800F7476D /* TJInstagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B6E17E1411800F7476D /* TJInstagramManager.m */; };
+		AD6E9B7417E1442100F7476D /* TJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7217E1442100F7476D /* TJLoginViewController.m */; };
+		AD6E9B7517E1442100F7476D /* TJLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,11 @@
 		AD6E9B5C17E139C800F7476D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AD6E9B5E17E139C800F7476D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AD6E9B6017E139C800F7476D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD6E9B6D17E1411800F7476D /* TJInstagramManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJInstagramManager.h; sourceTree = "<group>"; };
+		AD6E9B6E17E1411800F7476D /* TJInstagramManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJInstagramManager.m; sourceTree = "<group>"; };
+		AD6E9B7117E1442100F7476D /* TJLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLoginViewController.h; sourceTree = "<group>"; };
+		AD6E9B7217E1442100F7476D /* TJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLoginViewController.m; sourceTree = "<group>"; };
+		AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJLoginViewController.xib; sourceTree = "<group>"; };
 		F5EABA2B71EE49C0B4487A00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +92,8 @@
 		AD6E9B5017E139C800F7476D /* 20Jeans-API-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				AD6E9B7017E1440800F7476D /* Controllers */,
+				AD6E9B6C17E140DB00F7476D /* Managers */,
 				AD6E9B5917E139C800F7476D /* TJAppDelegate.h */,
 				AD6E9B5A17E139C800F7476D /* TJAppDelegate.m */,
 				AD6E9B5117E139C800F7476D /* Supporting Files */,
@@ -103,6 +113,25 @@
 				AD6E9B6017E139C800F7476D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD6E9B6C17E140DB00F7476D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E9B6D17E1411800F7476D /* TJInstagramManager.h */,
+				AD6E9B6E17E1411800F7476D /* TJInstagramManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		AD6E9B7017E1440800F7476D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E9B7117E1442100F7476D /* TJLoginViewController.h */,
+				AD6E9B7217E1442100F7476D /* TJLoginViewController.m */,
+				AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +192,7 @@
 				AD6E9B5D17E139C800F7476D /* Default.png in Resources */,
 				AD6E9B5F17E139C800F7476D /* Default@2x.png in Resources */,
 				AD6E9B6117E139C800F7476D /* Default-568h@2x.png in Resources */,
+				AD6E9B7517E1442100F7476D /* TJLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +238,8 @@
 			files = (
 				AD6E9B5717E139C800F7476D /* main.m in Sources */,
 				AD6E9B5B17E139C800F7476D /* TJAppDelegate.m in Sources */,
+				AD6E9B6F17E1411800F7476D /* TJInstagramManager.m in Sources */,
+				AD6E9B7417E1442100F7476D /* TJLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
