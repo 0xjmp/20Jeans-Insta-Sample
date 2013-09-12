@@ -1,1 +1,13 @@
+PODS:
+  - instagram-ios-sdk (0.0.1):
+    - SBJson (= 2.2.3)
+  - SBJson (2.2.3)
+
+DEPENDENCIES:
+  - instagram-ios-sdk (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  instagram-ios-sdk: b337c659943d061bb51cedfa280ff95f68dbe08c
+  SBJson: cc373c9eed9314a45715e4fb77a1415c45fa056e
+
 COCOAPODS: 0.23.0

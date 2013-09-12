@@ -1,0 +1,1 @@
+../../instagram-ios-sdk/instagram-ios-sdk/instagram-ios-sdk/Instagram.h
