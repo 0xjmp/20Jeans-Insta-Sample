@@ -31,7 +31,7 @@
         }
     };
     
-    [[TJInstagramManager shared] authorizeWithScopes:nil];
+    [[TJInstagramManager shared] authorizeWithScopes:@[@"basic", @"likes", @"relationships"]];
 }
 
 @end
