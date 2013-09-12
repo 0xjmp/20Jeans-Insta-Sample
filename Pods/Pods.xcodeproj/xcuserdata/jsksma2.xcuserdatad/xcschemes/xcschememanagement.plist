@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-MosaicUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Pods-SBJson.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,7 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>19052BE5F17145EB808C7706</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1B228E7805D7462388C21DEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FA856D1D9A44CA0866C4CF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5F7E53CBC8AD44A6A54FCB8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E047878ACF8F4B7DA05C23EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECDA7EBC73244CD59DFD154E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

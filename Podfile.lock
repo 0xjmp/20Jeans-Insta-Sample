@@ -1,13 +1,16 @@
 PODS:
   - instagram-ios-sdk (0.0.1):
     - SBJson (= 2.2.3)
+  - MosaicUI (0.0.1)
   - SBJson (2.2.3)
 
 DEPENDENCIES:
   - instagram-ios-sdk (~> 0.0.1)
+  - MosaicUI (~> 0.0.1)
 
 SPEC CHECKSUMS:
   instagram-ios-sdk: b337c659943d061bb51cedfa280ff95f68dbe08c
+  MosaicUI: 99a59e3fe2b1f43dbd681638a52effb79e5a6f35
   SBJson: cc373c9eed9314a45715e4fb77a1415c45fa056e
 
 COCOAPODS: 0.23.0
