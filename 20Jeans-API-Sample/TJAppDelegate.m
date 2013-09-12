@@ -9,6 +9,7 @@
 #import "TJAppDelegate.h"
 #import "TJInstagramManager.h"
 #import "TJLoginViewController.h"
+#import "TJMainViewController.h"
 
 @implementation TJAppDelegate
 
@@ -16,18 +17,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIViewController *mainViewController = [[UIViewController alloc] init];
+    TJMainViewController *mainViewController = [[TJMainViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     self.window.rootViewController = navController;
+    
+    [self.window makeKeyAndVisible];
     
     if (!TJInstagramManager.shared.isAuthenticated)
     {
         TJLoginViewController *loginViewController = [[TJLoginViewController alloc] init];
         [navController presentViewController:loginViewController animated:NO completion:nil];
     }
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     
     return YES;
 }
