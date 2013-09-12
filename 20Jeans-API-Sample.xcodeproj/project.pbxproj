@@ -22,6 +22,7 @@
 		AD6E9B7517E1442100F7476D /* TJLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */; };
 		AD6E9B7917E1495800F7476D /* TJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7717E1495800F7476D /* TJMainViewController.m */; };
 		AD6E9B7A17E1495800F7476D /* TJMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B7817E1495800F7476D /* TJMainViewController.xib */; };
+		AD6E9B7E17E14E8000F7476D /* TJMosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		AD6E9B7617E1495800F7476D /* TJMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJMainViewController.h; sourceTree = "<group>"; };
 		AD6E9B7717E1495800F7476D /* TJMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJMainViewController.m; sourceTree = "<group>"; };
 		AD6E9B7817E1495800F7476D /* TJMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJMainViewController.xib; sourceTree = "<group>"; };
+		AD6E9B7C17E14E8000F7476D /* TJMosaicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJMosaicView.h; sourceTree = "<group>"; };
+		AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJMosaicView.m; sourceTree = "<group>"; };
 		F5EABA2B71EE49C0B4487A00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +100,7 @@
 		AD6E9B5017E139C800F7476D /* 20Jeans-API-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				AD6E9B7B17E14E6900F7476D /* Views */,
 				AD6E9B7017E1440800F7476D /* Controllers */,
 				AD6E9B6C17E140DB00F7476D /* Managers */,
 				AD6E9B5917E139C800F7476D /* TJAppDelegate.h */,
@@ -140,6 +144,15 @@
 				AD6E9B7817E1495800F7476D /* TJMainViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AD6E9B7B17E14E6900F7476D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E9B7C17E14E8000F7476D /* TJMosaicView.h */,
+				AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +263,7 @@
 				AD6E9B6F17E1411800F7476D /* TJInstagramManager.m in Sources */,
 				AD6E9B7417E1442100F7476D /* TJLoginViewController.m in Sources */,
 				AD6E9B7917E1495800F7476D /* TJMainViewController.m in Sources */,
+				AD6E9B7E17E14E8000F7476D /* TJMosaicView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
