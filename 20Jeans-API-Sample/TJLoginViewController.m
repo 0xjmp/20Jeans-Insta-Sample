@@ -15,25 +15,23 @@
 
 @implementation TJLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Actions
 
-- (void)viewDidLoad
+- (IBAction)authorize:(id)sender
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    TJInstagramManager.shared.onInstagramLogin = ^(BOOL succeeded)
+    {
+        if (succeeded)
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else
+        {
+            // dialog to show cancelled login
+        }
+    };
+    
+    [[TJInstagramManager shared] authorizeWithScopes:nil];
 }
 
 @end
