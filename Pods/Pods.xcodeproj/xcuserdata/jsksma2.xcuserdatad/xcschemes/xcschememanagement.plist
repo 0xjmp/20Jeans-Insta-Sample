@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-BlocksKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Pods-MosaicUI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -19,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-libffi.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,6 +37,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00ADEF2B6DD2458099E6B99D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>19052BE5F17145EB808C7706</key>
 		<dict>
 			<key>primary</key>
@@ -42,12 +57,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2AEF6CFB4E1343DB87670019</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F00C4A7B23A435D97308C9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4815E686BF4F452A991BDB54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5F7E53CBC8AD44A6A54FCB8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61F0BC49F1A744189302D46F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B7D1FEEB31E46A0A2BA5C3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD0E6CC57B9A46DCA98BF72D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

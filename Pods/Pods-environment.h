@@ -6,6 +6,12 @@
 // project.
 
 
+// BlocksKit
+#define COCOAPODS_POD_AVAILABLE_BlocksKit
+#define COCOAPODS_VERSION_MAJOR_BlocksKit 1
+#define COCOAPODS_VERSION_MINOR_BlocksKit 8
+#define COCOAPODS_VERSION_PATCH_BlocksKit 3
+
 // MosaicUI
 #define COCOAPODS_POD_AVAILABLE_MosaicUI
 #define COCOAPODS_VERSION_MAJOR_MosaicUI 0
@@ -23,4 +29,10 @@
 #define COCOAPODS_VERSION_MAJOR_instagram_ios_sdk 0
 #define COCOAPODS_VERSION_MINOR_instagram_ios_sdk 0
 #define COCOAPODS_VERSION_PATCH_instagram_ios_sdk 1
+
+// libffi
+#define COCOAPODS_POD_AVAILABLE_libffi
+#define COCOAPODS_VERSION_MAJOR_libffi 3
+#define COCOAPODS_VERSION_MINOR_libffi 0
+#define COCOAPODS_VERSION_PATCH_libffi 13
 
