@@ -70,12 +70,12 @@
 
 - (void)igDidLogin
 {
-    
+    if (self.onInstagramLogin) self.onInstagramLogin(YES);
 }
 
 - (void)igDidNotLogin:(BOOL)cancelled
 {
-    
+    if (self.onInstagramLogin) self.onInstagramLogin(cancelled);
 }
 
 - (void)igDidLogout

@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^TJInstaLoginBlock)(BOOL succeeded);
+
 @interface TJInstagramManager : NSObject
+
+/** Block that's called when Instagram API successfully logs in */
+@property (strong, nonatomic) TJInstaLoginBlock onInstagramLogin;
 
 + (TJInstagramManager *)shared;
 
