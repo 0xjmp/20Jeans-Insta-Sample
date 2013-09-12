@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-BlocksKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -42,6 +47,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0B839D1EAC6E4273857BEC42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>19052BE5F17145EB808C7706</key>
 		<dict>
 			<key>primary</key>
@@ -67,6 +77,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>31149ED87DEF474A8C707946</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>365D003C2C2B416AAD7199D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38BAB52F8CF44F7DA1D8772C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4815E686BF4F452A991BDB54</key>
 		<dict>
 			<key>primary</key>
@@ -83,6 +108,21 @@
 			<true/>
 		</dict>
 		<key>6B7D1FEEB31E46A0A2BA5C3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>955464A948954F9C9D2B5204</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A72FCEEE2C454739BD8D5587</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9F006279A5F4179ABF78159</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,4 +1,5 @@
 PODS:
+  - AFNetworking (1.3.2)
   - BlocksKit (1.8.3):
     - libffi
   - instagram-ios-sdk (0.0.1):
@@ -8,11 +9,13 @@ PODS:
   - SBJson (2.2.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 1.3.2)
   - BlocksKit (~> 1.8.3)
   - instagram-ios-sdk (~> 0.0.1)
   - MosaicUI (~> 0.0.1)
 
 SPEC CHECKSUMS:
+  AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
   BlocksKit: 27257f9cbbec0ea98c80ba83cc2ea7111ae62eb2
   instagram-ios-sdk: b337c659943d061bb51cedfa280ff95f68dbe08c
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
