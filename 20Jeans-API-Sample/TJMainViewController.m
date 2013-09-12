@@ -8,9 +8,10 @@
 
 #import "TJMainViewController.h"
 #import "TJInstagramManager.h"
+#import "TJMosaicView.h"
 
 @interface TJMainViewController ()
-
+@property (strong, nonatomic) IBOutlet TJMosaicView *mosaicView;
 @end
 
 @implementation TJMainViewController
@@ -18,18 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self fetchInstagram];
-}
-
-#pragma mark - Fetcher methods
-
-- (void)fetchInstagram
-{
-    if (!TJInstagramManager.shared.isAuthenticated)
-        return;
     
-    // Fetch Instagram objects
+    
 }
 
 @end
