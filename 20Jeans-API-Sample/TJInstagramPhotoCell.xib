@@ -12,7 +12,6 @@
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
-			<string>IBUIActivityIndicatorView</string>
 			<string>IBUICollectionViewCell</string>
 			<string>IBUIImageView</string>
 		</array>
@@ -45,20 +44,10 @@
 								<int key="NSvFlags">1298</int>
 								<string key="NSFrameSize">{100, 100}</string>
 								<reference key="NSSuperview" ref="944541095"/>
-								<reference key="NSNextKeyView" ref="960683962"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							</object>
-							<object class="IBUIActivityIndicatorView" id="960683962">
-								<reference key="NSNextResponder" ref="944541095"/>
-								<int key="NSvFlags">-2147482332</int>
-								<string key="NSFrame">{{32, 31}, {37, 37}}</string>
-								<reference key="NSSuperview" ref="944541095"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">0</int>
 							</object>
 						</array>
 						<string key="NSFrameSize">{100, 100}</string>
@@ -102,14 +91,6 @@
 					</object>
 					<int key="connectionID">19</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">activityIndicator</string>
-						<reference key="source" ref="369367342"/>
-						<reference key="destination" ref="960683962"/>
-					</object>
-					<int key="connectionID">20</int>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -135,7 +116,6 @@
 						<reference key="object" ref="369367342"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="909176658"/>
-							<reference ref="960683962"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -144,18 +124,12 @@
 						<reference key="object" ref="909176658"/>
 						<reference key="parent" ref="369367342"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">11</int>
-						<reference key="object" ref="960683962"/>
-						<reference key="parent" ref="369367342"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">TJInstagramPhotoCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

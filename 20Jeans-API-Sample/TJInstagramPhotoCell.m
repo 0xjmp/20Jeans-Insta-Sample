@@ -24,8 +24,7 @@
     
     [super prepareForReuse];
     
-    self.activityIndicator.center = self.center;
-    [self.activityIndicator startAnimating];
+    self.imageView.image = nil;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.info[@"url"]]];
     
@@ -34,15 +33,13 @@
                           placeholderImage:nil
                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image)
     {
-        [weakSelf.activityIndicator stopAnimating];
-        
         [weakSelf setNeedsDisplay];
         
         weakSelf.imageView.image = image;
     }
                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
     {
-        NSLog(@"Error: %@", error);
+        NSLog(@"Error loading image: %@", error);
     }];
 }
 
