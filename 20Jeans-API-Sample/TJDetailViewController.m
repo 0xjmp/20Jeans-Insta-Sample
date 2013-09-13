@@ -7,6 +7,9 @@
 //
 
 #import "TJDetailViewController.h"
+#import <MapKit/MapKit.h>
+
+typedef void (^TJGeocodeSuccessBlock)(NSArray *placemarks, NSError *error);
 
 @interface TJDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
@@ -17,33 +20,64 @@
 
 @implementation TJDetailViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
     self.usernameLabel.text = self.info[@"username"];
     self.hashtagLabel.text = [NSString stringWithFormat:@"#%@", self.info[@"hashtag"]];
+    
+    self.locationLabel.hidden = YES;
+    [self reverseGeocodedLocation];
     
     [self.imageView setImage:self.image];
 }
 
-- (void)setInfo:(NSDictionary *)info
+- (void)viewWillDisappear:(BOOL)animated
 {
-    _info = info;
+    [super viewWillDisappear:animated];
     
-    self.usernameLabel.text = info[@"username"];
-    self.hashtagLabel.text = info[@"hashtag"];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)setImage:(UIImage *)image
+- (void)reverseGeocodedLocation
 {
-    _image = image;
-    [self.imageView setImage:image];
+    if (![self.info[@"location"] isKindOfClass:[NSDictionary class]])
+        return;
+    
+    NSDictionary *dict = self.info[@"location"];
+    
+    // Exception for Instagram sending a custom name
+    if ([dict objectForKey:@"name"])
+    {
+        self.locationLabel.text = dict[@"name"];
+        self.locationLabel.hidden = NO;
+        return;
+    }
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    NSNumber *latitude = self.info[@"location"][@"latitude"];
+    NSNumber *longitude = self.info[@"location"][@"longitude"];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude.floatValue
+                                                      longitude:longitude.floatValue];
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (!error)
+         {
+             self.locationLabel.hidden = NO;
+             
+             CLPlacemark *placemark = placemarks[0];
+             
+             self.locationLabel.text = placemark.name;
+         }
+         else
+         {
+             NSLog(@"Geocoder error: %@", error);
+         }
+     }];
 }
 
 @end
