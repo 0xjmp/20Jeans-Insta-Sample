@@ -22,6 +22,7 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
 @implementation TJMainViewController
 {
     NSMutableArray *_cellInfos;
+    CGFloat _currentY;
 }
 
 - (void)viewDidLoad
@@ -49,6 +50,13 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // Retain scroll position for transitions between detail and main view controller
+    if (_currentY)
+    {
+        self.collectionView.contentOffset = CGPointMake(0, _currentY);
+        _currentY = 0;
+    }
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
@@ -130,13 +138,15 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
     detailViewController.image = cell.imageView.image;
     
     [self.navigationController pushViewController:detailViewController animated:YES];
+    
+    _currentY = self.collectionView.contentOffset.y;
 }
 
 #pragma mark - UIScrollView delegate methods
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-//    [TJInstagramManager.shared fetchNextSpecialInstagramHashtags];
+    [TJInstagramManager.shared fetchNextSpecialInstagramHashtags];
 }
 
 #pragma mark - RFQuiltLayout delegate methods
