@@ -18,6 +18,8 @@
 @property (strong, nonatomic) Instagram *instagram;
 @property (nonatomic, assign, readwrite) BOOL isAuthenticated;
 @property (strong, nonatomic) AFHTTPClient *serverClient;
+
+@property (strong, nonatomic) NSMutableArray *paginations;
 @end
 
 @implementation TJInstagramManager
@@ -54,6 +56,8 @@
                           @"truegrit"
                           ];
     
+    self.paginations = [NSMutableArray arrayWithCapacity:hashtags.count];
+    
     for (NSString *hashtag in hashtags)
     {
         [self fetchInstagramPhotosForHashTag:hashtag];
@@ -63,7 +67,6 @@
 - (void)fetchInstagramPhotosForHashTag:(NSString *)hashtag
 {
     NSDictionary *params = @{
-                             @"count" : @(25),
                              @"access_token": self.instagram.accessToken
                              };
     
@@ -74,12 +77,51 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
         
         if (self.updateBlock) self.updateBlock(dict, hashtag);
+        
+        NSDictionary *info = @{
+                               @"hashtag" : hashtag,
+                               @"max_tag" : dict[@"pagination"][@"next_max_id"]
+                               };
+        [self.paginations addObject:info];
     }
             failure:^(AFHTTPRequestOperation *operation, NSError *error)
     {
         // Don't call self.updateBlock here to prevent an update
         NSLog(@"Erorr: %@", error);
     }];
+}
+
+- (void)fetchNextSpecialInstagramHashtags
+{
+    if (!self.paginations)
+        return;
+    
+    for (NSDictionary *info in self.paginations)
+    {
+        [self fetchNextForHashtag:info[@"hashtag"] maxTag:info[@"max_tag"]];
+    }
+}
+
+- (void)fetchNextForHashtag:(NSString *)hashtag maxTag:(NSString *)maxTag
+{
+    NSString *path = [NSString stringWithFormat:@"tags/%@/media/recent", hashtag];
+    
+    NSDictionary *params = @{
+                             @"access_token" : self.instagram.accessToken,
+                             @"max_tag_id" : maxTag
+                             };
+    
+    [self.serverClient getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
+         
+         if (self.updateBlock) self.updateBlock(dict, hashtag);
+     }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         // Don't call self.updateBlock here to prevent an update
+         NSLog(@"Erorr: %@", error);
+     }];
 }
 
 - (void)fetchListWithParams:(NSMutableDictionary *)params

@@ -34,6 +34,9 @@ typedef void (^TJUpdateBlock)(id result, NSString *hashtag);
 /* Requires self.updateBlock */
 - (void)fetchSpecialInstagramHashtags;
 
+/* Requires self.updateBlock */
+- (void)fetchNextSpecialInstagramHashtags;
+
 #pragma mark Auth logic
 - (BOOL)handleOpenURL:(NSURL *)url;
 - (BOOL)isAuthenticated;
