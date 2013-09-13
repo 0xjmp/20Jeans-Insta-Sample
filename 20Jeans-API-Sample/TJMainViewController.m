@@ -34,7 +34,7 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
     RFQuiltLayout *layout = (id)[self.collectionView collectionViewLayout];
     layout.delegate = self;
     layout.direction = UICollectionViewScrollDirectionVertical;
-    layout.blockPixels = CGSizeMake(100, 132);
+    layout.blockPixels = CGSizeMake(100, 100);
     
     [TJInstagramManager.shared addObserverForKeyPath:@"isAuthenticated"
                                           identifier:TJUserAuthenticationStatusChanged
@@ -44,6 +44,13 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
          // Fetch instagram
          [self fetchInstagram];
      }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 #pragma mark - Fetcher methods
@@ -61,30 +68,29 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
         
         for (NSDictionary *info in result[@"data"])
         {
-            NSArray *objects = [NSArray arrayWithObjects:
-                                info[@"images"][@"standard_resolution"][@"url"],
-                                info[@"images"][@"standard_resolution"][@"height"],
-                                info[@"images"][@"standard_resolution"][@"width"],
-                                info[@"user"][@"username"],
-                                hashtag,
-                                nil];
+            NSMutableArray *objects = [NSMutableArray arrayWithObjects:
+                                       info[@"images"][@"standard_resolution"][@"url"],
+                                       info[@"images"][@"standard_resolution"][@"height"],
+                                       info[@"images"][@"standard_resolution"][@"width"],
+                                       info[@"user"][@"username"],
+                                       hashtag,
+                                       nil];
             
-            NSArray *keys = [NSArray arrayWithObjects:
-                             @"url",
-                             @"height",
-                             @"width",
-                             @"username",
-                             @"hashtag",
-                             nil];
+            NSMutableArray *keys = [NSMutableArray arrayWithObjects:
+                                    @"url",
+                                    @"height",
+                                    @"width",
+                                    @"username",
+                                    @"hashtag",
+                                    nil];
             
-            // Randomize order of cell info
-            int randomInt = 0;
-            if (_cellInfos.count > 0)
+            if (info[@"location"])
             {
-                randomInt = arc4random() % _cellInfos.count;
+                [objects addObject:info[@"location"]];
+                [keys addObject:@"location"];
             }
             
-            [_cellInfos insertObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys] atIndex:randomInt];
+            [_cellInfos addObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_cellInfos.count - 1 inSection:0];
             [indexPaths addObject:indexPath];
@@ -124,6 +130,13 @@ NSString *const TJUserAuthenticationStatusChanged = @"TJUserAuthenticationStatus
     detailViewController.image = cell.imageView.image;
     
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma mark - UIScrollView delegate methods
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+//    [TJInstagramManager.shared fetchNextSpecialInstagramHashtags];
 }
 
 #pragma mark - RFQuiltLayout delegate methods

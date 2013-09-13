@@ -11,9 +11,6 @@
 @interface TJInstagramPhotoCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (strong, nonatomic) IBOutlet UILabel *hashtagLabel;
-@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (strong, nonatomic) NSDictionary *info;
 

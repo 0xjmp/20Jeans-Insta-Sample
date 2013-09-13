@@ -39,9 +39,6 @@
         [weakSelf setNeedsDisplay];
         
         weakSelf.imageView.image = image;
-        
-        weakSelf.hashtagLabel.text = [NSString stringWithFormat:@"#%@", weakSelf.info[@"hashtag"]];
-        weakSelf.usernameLabel.text = weakSelf.info[@"username"];
     }
                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
     {
