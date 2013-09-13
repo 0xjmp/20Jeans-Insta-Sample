@@ -26,6 +26,8 @@ typedef void (^TJGeocodeSuccessBlock)(NSArray *placemarks, NSError *error);
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    self.title = self.info[@"username"];
+    
     self.usernameLabel.text = self.info[@"username"];
     self.hashtagLabel.text = [NSString stringWithFormat:@"#%@", self.info[@"hashtag"]];
     
