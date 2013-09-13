@@ -9,30 +9,41 @@
 #import "TJDetailViewController.h"
 
 @interface TJDetailViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *hashtagLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @end
 
 @implementation TJDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    
+    self.usernameLabel.text = self.info[@"username"];
+    self.hashtagLabel.text = [NSString stringWithFormat:@"#%@", self.info[@"hashtag"]];
+    
+    [self.imageView setImage:self.image];
+}
+
+- (void)setInfo:(NSDictionary *)info
+{
+    _info = info;
+    
+    self.usernameLabel.text = info[@"username"];
+    self.hashtagLabel.text = info[@"hashtag"];
+}
+
+- (void)setImage:(UIImage *)image
+{
+    _image = image;
+    [self.imageView setImage:image];
 }
 
 @end

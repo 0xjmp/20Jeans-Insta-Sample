@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Pods-RFQuiltLayout.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods-SBJson.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -52,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0CCCD4BEDEF24CBCA473152F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>19052BE5F17145EB808C7706</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>1B228E7805D7462388C21DEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CF9744A98A74C00BACF7716</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,6 +127,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6C9E5F12331E4095BF179430</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86D754EC41D7432095FDE4F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>955464A948954F9C9D2B5204</key>
 		<dict>
 			<key>primary</key>
@@ -122,12 +147,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A9688FAF2CC94D7293469006</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9CCFE6B71D642019F30F0E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A9F006279A5F4179ABF78159</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BD0E6CC57B9A46DCA98BF72D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D71127EBA02144128DD54F90</key>
 		<dict>
 			<key>primary</key>
 			<true/>

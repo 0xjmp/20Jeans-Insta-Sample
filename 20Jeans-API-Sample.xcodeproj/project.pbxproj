@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DFAD4BDCB4341839457F286 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EABA2B71EE49C0B4487A00 /* libPods.a */; };
+		AD28A61517E1D13D00A7FBCA /* TJMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD28A61417E1D13D00A7FBCA /* TJMainViewController.xib */; };
 		AD6E9B4B17E139C800F7476D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6E9B4A17E139C800F7476D /* UIKit.framework */; };
 		AD6E9B4D17E139C800F7476D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6E9B4C17E139C800F7476D /* Foundation.framework */; };
 		AD6E9B4F17E139C800F7476D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6E9B4E17E139C800F7476D /* CoreGraphics.framework */; };
@@ -21,12 +22,15 @@
 		AD6E9B7417E1442100F7476D /* TJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7217E1442100F7476D /* TJLoginViewController.m */; };
 		AD6E9B7517E1442100F7476D /* TJLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */; };
 		AD6E9B7917E1495800F7476D /* TJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7717E1495800F7476D /* TJMainViewController.m */; };
-		AD6E9B7A17E1495800F7476D /* TJMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B7817E1495800F7476D /* TJMainViewController.xib */; };
-		AD6E9B7E17E14E8000F7476D /* TJMosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */; };
+		AD6E9B8817E1820E00F7476D /* TJInstagramPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E9B8717E1820E00F7476D /* TJInstagramPhotoCell.m */; };
+		AD6E9B8A17E1821D00F7476D /* TJInstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B8917E1821D00F7476D /* TJInstagramPhotoCell.xib */; };
+		ADDFF71D17E399DD00A51D9F /* TJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDFF71B17E399DD00A51D9F /* TJDetailViewController.m */; };
+		ADDFF71E17E399DD00A51D9F /* TJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDFF71C17E399DD00A51D9F /* TJDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DA6E38E8C2D42E7A7A0B13B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AD28A61417E1D13D00A7FBCA /* TJMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJMainViewController.xib; sourceTree = "<group>"; };
 		AD6E9B4717E139C800F7476D /* 20Jeans-API-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20Jeans-API-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6E9B4A17E139C800F7476D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD6E9B4C17E139C800F7476D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,9 +51,12 @@
 		AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJLoginViewController.xib; sourceTree = "<group>"; };
 		AD6E9B7617E1495800F7476D /* TJMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJMainViewController.h; sourceTree = "<group>"; };
 		AD6E9B7717E1495800F7476D /* TJMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJMainViewController.m; sourceTree = "<group>"; };
-		AD6E9B7817E1495800F7476D /* TJMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJMainViewController.xib; sourceTree = "<group>"; };
-		AD6E9B7C17E14E8000F7476D /* TJMosaicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJMosaicView.h; sourceTree = "<group>"; };
-		AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJMosaicView.m; sourceTree = "<group>"; };
+		AD6E9B8617E1820E00F7476D /* TJInstagramPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJInstagramPhotoCell.h; sourceTree = "<group>"; };
+		AD6E9B8717E1820E00F7476D /* TJInstagramPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJInstagramPhotoCell.m; sourceTree = "<group>"; };
+		AD6E9B8917E1821D00F7476D /* TJInstagramPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJInstagramPhotoCell.xib; sourceTree = "<group>"; };
+		ADDFF71A17E399DD00A51D9F /* TJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJDetailViewController.h; sourceTree = "<group>"; };
+		ADDFF71B17E399DD00A51D9F /* TJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJDetailViewController.m; sourceTree = "<group>"; };
+		ADDFF71C17E399DD00A51D9F /* TJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJDetailViewController.xib; sourceTree = "<group>"; };
 		F5EABA2B71EE49C0B4487A00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,7 +148,10 @@
 				AD6E9B7317E1442100F7476D /* TJLoginViewController.xib */,
 				AD6E9B7617E1495800F7476D /* TJMainViewController.h */,
 				AD6E9B7717E1495800F7476D /* TJMainViewController.m */,
-				AD6E9B7817E1495800F7476D /* TJMainViewController.xib */,
+				AD28A61417E1D13D00A7FBCA /* TJMainViewController.xib */,
+				ADDFF71A17E399DD00A51D9F /* TJDetailViewController.h */,
+				ADDFF71B17E399DD00A51D9F /* TJDetailViewController.m */,
+				ADDFF71C17E399DD00A51D9F /* TJDetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -149,8 +159,9 @@
 		AD6E9B7B17E14E6900F7476D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AD6E9B7C17E14E8000F7476D /* TJMosaicView.h */,
-				AD6E9B7D17E14E8000F7476D /* TJMosaicView.m */,
+				AD6E9B8617E1820E00F7476D /* TJInstagramPhotoCell.h */,
+				AD6E9B8717E1820E00F7476D /* TJInstagramPhotoCell.m */,
+				AD6E9B8917E1821D00F7476D /* TJInstagramPhotoCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,7 +225,9 @@
 				AD6E9B5F17E139C800F7476D /* Default@2x.png in Resources */,
 				AD6E9B6117E139C800F7476D /* Default-568h@2x.png in Resources */,
 				AD6E9B7517E1442100F7476D /* TJLoginViewController.xib in Resources */,
-				AD6E9B7A17E1495800F7476D /* TJMainViewController.xib in Resources */,
+				AD6E9B8A17E1821D00F7476D /* TJInstagramPhotoCell.xib in Resources */,
+				AD28A61517E1D13D00A7FBCA /* TJMainViewController.xib in Resources */,
+				ADDFF71E17E399DD00A51D9F /* TJDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +276,8 @@
 				AD6E9B6F17E1411800F7476D /* TJInstagramManager.m in Sources */,
 				AD6E9B7417E1442100F7476D /* TJLoginViewController.m in Sources */,
 				AD6E9B7917E1495800F7476D /* TJMainViewController.m in Sources */,
-				AD6E9B7E17E14E8000F7476D /* TJMosaicView.m in Sources */,
+				AD6E9B8817E1820E00F7476D /* TJInstagramPhotoCell.m in Sources */,
+				ADDFF71D17E399DD00A51D9F /* TJDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,4 +45,9 @@
     return [[TJInstagramManager shared] handleOpenURL:url];
 }
 
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

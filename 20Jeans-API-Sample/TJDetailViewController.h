@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TJDetailViewController : UIViewController
-
+@property (strong, nonatomic) NSDictionary *info;
+@property (strong, nonatomic) UIImage *image;
 @end

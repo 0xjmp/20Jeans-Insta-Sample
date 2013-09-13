@@ -9,11 +9,15 @@
 #import "TJInstagramManager.h"
 #import <Instagram.h>
 #import "TJLoginViewController.h"
+#import <AFNetworking.h>
 
 #define kInstagramClientId @"99f687781a2a4cee96c967ac28a8d576"
+#define kInstagramTwentyJeansUserId @"233783356"
 
 @interface TJInstagramManager () <IGSessionDelegate, IGRequestDelegate>
 @property (strong, nonatomic) Instagram *instagram;
+@property (nonatomic, assign, readwrite) BOOL isAuthenticated;
+@property (strong, nonatomic) AFHTTPClient *serverClient;
 @end
 
 @implementation TJInstagramManager
@@ -34,6 +38,50 @@
 
 #pragma mark Fetcher methods
 
+- (void)fetchSpecialInstagramHashtags
+{
+    if (!self.isAuthenticated || self.instagram.accessToken.length == 0)
+    {
+        NSLog(@"user not authenticated!");
+        return;
+    }
+    
+    NSArray *hashtags = @[
+                          @"20jeans",
+                          @"polychrom",
+                          @"springst",
+                          @"vantagepoint",
+                          @"truegrit"
+                          ];
+    
+    for (NSString *hashtag in hashtags)
+    {
+        [self fetchInstagramPhotosForHashTag:hashtag];
+    }
+}
+
+- (void)fetchInstagramPhotosForHashTag:(NSString *)hashtag
+{
+    NSDictionary *params = @{
+                             @"count" : @(25),
+                             @"access_token": self.instagram.accessToken
+                             };
+    
+    NSString *path = [NSString stringWithFormat:@"tags/%@/media/recent", hashtag];
+    
+    [self.serverClient getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
+        
+        if (self.updateBlock) self.updateBlock(dict, hashtag);
+    }
+            failure:^(AFHTTPRequestOperation *operation, NSError *error)
+    {
+        // Don't call self.updateBlock here to prevent an update
+        NSLog(@"Erorr: %@", error);
+    }];
+}
+
 - (void)fetchListWithParams:(NSMutableDictionary *)params
 {
     [self.instagram requestWithParams:params delegate:self];
@@ -48,6 +96,7 @@
 
 - (BOOL)isAuthenticated
 {
+//    return YES;
     return [self.instagram isSessionValid];
 }
 
@@ -69,6 +118,7 @@
     if (self)
     {
         _instagram = [[Instagram alloc] initWithClientId:kInstagramClientId delegate:self];
+        _serverClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.instagram.com/v1/"]];
     }
     
     return self;
@@ -78,6 +128,7 @@
 
 - (void)igDidLogin
 {
+    self.isAuthenticated = YES;
     if (self.onInstagramLogin) self.onInstagramLogin(YES);
 }
 
