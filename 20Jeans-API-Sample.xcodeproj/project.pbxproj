@@ -26,6 +26,8 @@
 		AD6E9B8A17E1821D00F7476D /* TJInstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E9B8917E1821D00F7476D /* TJInstagramPhotoCell.xib */; };
 		ADDFF71D17E399DD00A51D9F /* TJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDFF71B17E399DD00A51D9F /* TJDetailViewController.m */; };
 		ADDFF71E17E399DD00A51D9F /* TJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDFF71C17E399DD00A51D9F /* TJDetailViewController.xib */; };
+		ADDFF72017E3BDAF00A51D9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDFF71F17E3BDAF00A51D9F /* MapKit.framework */; };
+		ADDFF72217E3BDED00A51D9F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDFF72117E3BDEC00A51D9F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		ADDFF71A17E399DD00A51D9F /* TJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJDetailViewController.h; sourceTree = "<group>"; };
 		ADDFF71B17E399DD00A51D9F /* TJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJDetailViewController.m; sourceTree = "<group>"; };
 		ADDFF71C17E399DD00A51D9F /* TJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJDetailViewController.xib; sourceTree = "<group>"; };
+		ADDFF71F17E3BDAF00A51D9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ADDFF72117E3BDEC00A51D9F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F5EABA2B71EE49C0B4487A00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADDFF72217E3BDED00A51D9F /* CoreLocation.framework in Frameworks */,
+				ADDFF72017E3BDAF00A51D9F /* MapKit.framework in Frameworks */,
 				AD6E9B4B17E139C800F7476D /* UIKit.framework in Frameworks */,
 				AD6E9B4D17E139C800F7476D /* Foundation.framework in Frameworks */,
 				AD6E9B4F17E139C800F7476D /* CoreGraphics.framework in Frameworks */,
@@ -96,6 +102,8 @@
 		AD6E9B4917E139C800F7476D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADDFF72117E3BDEC00A51D9F /* CoreLocation.framework */,
+				ADDFF71F17E3BDAF00A51D9F /* MapKit.framework */,
 				AD6E9B4A17E139C800F7476D /* UIKit.framework */,
 				AD6E9B4C17E139C800F7476D /* Foundation.framework */,
 				AD6E9B4E17E139C800F7476D /* CoreGraphics.framework */,
