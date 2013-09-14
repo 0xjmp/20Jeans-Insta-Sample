@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^TJInstaLoginBlock)(BOOL succeeded);
-typedef void (^TJSuccessBlock)(id result, NSError *error);
 typedef void (^TJUpdateBlock)(id result, NSString *hashtag);
 
 @interface TJInstagramManager : NSObject
@@ -19,17 +18,12 @@ typedef void (^TJUpdateBlock)(id result, NSString *hashtag);
 /** Block that's called when Instagram API successfully logs in */
 @property (strong, nonatomic) TJInstaLoginBlock onInstagramLogin;
 
-/** Block that's called when Instagram API sends json response */
-@property (strong, nonatomic) TJSuccessBlock resultBlock;
-
+/** Block that's called when Instagram API sends json responses; adds on to what's current */
 @property (strong, nonatomic) TJUpdateBlock updateBlock;
 
 + (TJInstagramManager *)shared;
 
 #pragma mark Fetcher methods
-
-/* Initiates a request; result/error returned via resultBlock */
-- (void)fetchListWithParams:(NSMutableDictionary *)params;
 
 /* Requires self.updateBlock */
 - (void)fetchSpecialInstagramHashtags;

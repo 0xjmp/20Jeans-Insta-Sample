@@ -25,10 +25,6 @@
         {
             [self dismissViewControllerAnimated:YES completion:nil];
         }
-        else
-        {
-            // dialog to show cancelled login
-        }
     };
     
     [[TJInstagramManager shared] authorizeWithScopes:@[@"basic", @"likes", @"relationships"]];

@@ -42,7 +42,7 @@
 
 - (void)fetchSpecialInstagramHashtags
 {
-    if (!self.isAuthenticated || self.instagram.accessToken.length == 0)
+    if (!self.isAuthenticated)
     {
         NSLog(@"user not authenticated!");
         return;
@@ -67,7 +67,7 @@
 - (void)fetchInstagramPhotosForHashTag:(NSString *)hashtag
 {
     NSDictionary *params = @{
-                             @"access_token": self.instagram.accessToken
+                             @"access_token": self.accessToken
                              };
     
     NSString *path = [NSString stringWithFormat:@"tags/%@/media/recent", hashtag];
@@ -107,7 +107,7 @@
     NSString *path = [NSString stringWithFormat:@"tags/%@/media/recent", hashtag];
     
     NSDictionary *params = @{
-                             @"access_token" : self.instagram.accessToken,
+                             @"access_token" : self.accessToken,
                              @"max_tag_id" : maxTag
                              };
     
@@ -124,11 +124,6 @@
      }];
 }
 
-- (void)fetchListWithParams:(NSMutableDictionary *)params
-{
-    [self.instagram requestWithParams:params delegate:self];
-}
-
 #pragma mark Auth logic
 
 - (BOOL)handleOpenURL:(NSURL *)url
@@ -138,8 +133,11 @@
 
 - (BOOL)isAuthenticated
 {
-//    return YES;
-    return [self.instagram isSessionValid];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"instagram.accessToken"];
+    
+    NSLog(@"auth: %@", accessToken);
+    
+    return accessToken.length > 0;
 }
 
 - (void)logout
@@ -170,7 +168,9 @@
 
 - (void)igDidLogin
 {
+    [[NSUserDefaults standardUserDefaults] setObject:self.instagram.accessToken forKey:@"instagram.accessToken"];
     self.isAuthenticated = YES;
+    
     if (self.onInstagramLogin) self.onInstagramLogin(YES);
 }
 
@@ -181,26 +181,38 @@
 
 - (void)igDidLogout
 {
-    // TODO: popToRoot - present login view controller
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"instagram.accessToken"];
 }
 
 - (void)igSessionInvalidated
 {
-    // TODO: popToRoot - present login view controller
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"instagram.accessToken"];
 }
 
 #pragma mark IGRequest delegate methods
 
 - (void)request:(IGRequest *)request didLoad:(id)result
-{
-    if (self.resultBlock) self.resultBlock(result, nil);
-}
+{}
 
 - (void)request:(IGRequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"Instagram API error: %@", error);
+}
+
+#pragma mark Accessor methods
+
+- (NSString *)accessToken
+{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"instagram.accessToken"];
     
-    if (self.resultBlock) self.resultBlock(nil, error);
+    if (accessToken.length > 0)
+    {
+        return accessToken;
+    }
+    else
+    {
+        return self.instagram.accessToken;
+    }
 }
 
 @end
