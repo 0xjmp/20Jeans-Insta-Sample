@@ -10,10 +10,29 @@
 #import "TJInstagramManager.h"
 
 @interface TJLoginViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation TJLoginViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    CGRect frame = UIApplication.sharedApplication.keyWindow.frame;
+    
+    if (frame.size.height >= 568)
+    {
+        self.imageView.image = [UIImage imageNamed:@"loginScreen568h-@2x.png"];
+    }
+    else
+    {
+        self.imageView.image = [UIImage imageNamed:@"loginScreen.png"];
+    }
+    
+    NSLog(@"bounds: %f", frame.size.height);
+    
+}
 
 #pragma mark - Actions
 
