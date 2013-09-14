@@ -29,9 +29,6 @@
     {
         self.imageView.image = [UIImage imageNamed:@"loginScreen.png"];
     }
-    
-    NSLog(@"bounds: %f", frame.size.height);
-    
 }
 
 #pragma mark - Actions

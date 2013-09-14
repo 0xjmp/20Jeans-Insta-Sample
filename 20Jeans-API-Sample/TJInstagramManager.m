@@ -80,7 +80,7 @@
         
         NSDictionary *info = @{
                                @"hashtag" : hashtag,
-                               @"max_tag" : dict[@"pagination"][@"next_max_id"]
+                               @"next_url" : dict[@"pagination"][@"next_url"]
                                };
         [self.paginations addObject:info];
     }
@@ -98,20 +98,19 @@
     
     for (NSDictionary *info in self.paginations)
     {
-        [self fetchNextForHashtag:info[@"hashtag"] maxTag:info[@"max_tag"]];
+        [self fetchNextForHashtag:info[@"hashtag"] path:info[@"next_url"]];
     }
 }
 
-- (void)fetchNextForHashtag:(NSString *)hashtag maxTag:(NSString *)maxTag
-{
-    NSString *path = [NSString stringWithFormat:@"tags/%@/media/recent", hashtag];
-    
+- (void)fetchNextForHashtag:(NSString *)hashtag path:(NSString *)path
+{    
     NSDictionary *params = @{
-                             @"access_token" : self.accessToken,
-                             @"max_tag_id" : maxTag
+                             @"access_token" : self.accessToken
                              };
     
-    [self.serverClient getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@""]];
+    
+    [client getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
          
@@ -134,8 +133,6 @@
 - (BOOL)isAuthenticated
 {
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"instagram.accessToken"];
-    
-    NSLog(@"auth: %@", accessToken);
     
     return accessToken.length > 0;
 }
